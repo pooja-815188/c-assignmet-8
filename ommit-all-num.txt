@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int repeatdigit(int n)
+{
+    int p=1,count=0,rem;
+    while(n)
+    {
+        rem=n%10;
+        p=p*rem;
+        n=n/10;
+        count++;
+    }
+    if(pow(rem,count)==p)
+    {
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+}
+int main()
+{
+    int i;
+    for(i=1;i<=1000;i++)
+    {
+        if(repeatdigit(i))
+        {
+            printf("%d ",i);
+        }
+    }
+}
